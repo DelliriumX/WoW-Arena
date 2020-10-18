@@ -28,3 +28,33 @@ STRING 6
 Force 1
 }
 
+STRING 9
+// Units: e000 (ProgressBar), Name (Name)
+{
+ProgressBar
+}
+
+STRING 10
+// Units: e000 (ProgressBar), Ubertip (Tooltip - Extended)
+{
+http://wc3campaigns.net/vexorian
+}
+
+STRING 11
+// Units: H000 (Tester), Name (Name)
+{
+Tester
+}
+
+STRING 12
+// Units: H000 (Tester), Propernames (Proper Names)
+{
+aba
+}
+
+STRING 13
+// Units: H001 (Target Dummy), Name (Name)
+{
+Target Dummy
+}
+

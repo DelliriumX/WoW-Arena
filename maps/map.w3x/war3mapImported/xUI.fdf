@@ -1,0 +1,399 @@
+String "xUI_TextFormat" { 
+	FontColor 		1.0 1.0 1.0 1.0,
+	FontShadowColor 	0.0 0.0 0.0 0.9,
+	FontShadowOffset 	0.001 -0.001,
+}
+
+Texture "xUI_SimplePanelHighlight" {
+    File "UI\Glues\ScoreScreen\scorescreen-tab-hilight",
+    //File "textures\red_glow1",
+    //File "textures\yellow_glow",
+    //File "textures\blue_glow2",
+    AlphaMode "ADD",
+}
+
+Frame "SIMPLEFRAME" "xUI_SimpleText" {
+	Width 	0.009375,
+	Height 	0.009375, 
+
+  String "xUI_SimpleTextText" INHERITS "xUI_TextFormat" {
+		UseActiveContext,
+		SetAllPoints,
+		Text "SampleText",
+		Font 			"Fonts\\FRIZQT__.TTF", 0.009375,
+		FontJustificationH 	JUSTIFYLEFT,
+		FontJustificationV 	JUSTIFYMIDDLE,
+		FontShadowColor 	0.0 0.0 0.0 0.9,
+		FontShadowOffset 	0.001 -0.001,
+	}
+}
+
+Frame "SIMPLEFRAME" "xUI_SimpleTexture" {
+	Width 	0.0375,
+	Height 	0.0375,
+
+	Layer "BACKGROUND" {
+			Texture "xUI_SimpleTextureBackground"	{
+				File "Textures\Transparent.tga", 
+			}
+	}
+	Layer "ARTWORK" {
+			Texture "xUI_SimpleTextureTexture"	{
+				File "ReplaceableTextures\CommandButtons\BTNSelectHeroOn.blp", 
+			}
+	}
+	Frame "SIMPLEFRAME" "xUI_SimpleTextureChildFrame" {
+			UseActiveContext,
+			SetAllPoints, 
+			Layer "ARTWORK" {
+				Texture "xUI_SimpleTextureBorder"	{
+					File "Textures\Transparent.tga", 
+				}
+			}
+	}
+}
+
+Frame "SIMPLEBUTTON" "xUI_SimplePanel" {
+    Width 0.0375,
+    Height 0.0375,
+
+		// UseHighlight "xUI_SimplePanelHighlight",
+		Layer "BACKGROUND" {
+			Texture "xUI_SimplePanelBackground"	{
+				File "Textures\Transparent.tga", 
+			}
+		}
+    Layer "ARTWORK" {
+        Texture "xUI_SimplePanelTexture"	{
+					File "Textures\Transparent.tga", 
+        }
+    }
+		Frame "SIMPLEFRAME" "xUI_SimplePanelChildFrame" {
+			UseActiveContext,
+			SetAllPoints, 
+			Layer "ARTWORK" {
+				Texture "xUI_SimplePanelBorder"	{
+					File "Textures\Transparent.tga", 
+				}
+			}
+	}
+}
+
+Frame "SIMPLESTATUSBAR" "xUI_Bar" {
+   Width 0.07, 
+   Height 0.012, 
+   BarTexture "Replaceabletextures\Teamcolor\Teamcolor00.blp",
+   Layer "BACKGROUND" { 
+       Texture "xUI_BarBackground"{ 
+           File "Replaceabletextures\Teamcolor\Teamcolor27.blp", 	// DarkGray
+       }
+   }
+   Frame "SIMPLEFRAME" "xUI_BarFrame" {
+		 	UseActiveContext,
+       SetAllPoints, 
+       Layer "ARTWORK" {
+           Texture "xUI_BarBorder" {
+               File "Textures\Transparent.tga", 
+           }
+           String "xUI_BarText" INHERITS "xUI_TextFormat" {
+						 	UseActiveContext,
+						 	SetAllPoints,
+							Text "SampleText",
+  						Font "Fonts\FRIZQT__.TTF", 0.009375,
+							FontJustificationH 	JUSTIFYLEFT,
+							FontJustificationV 	JUSTIFYMIDDLE,
+							FontShadowColor 	0.0 0.0 0.0 0.9,
+							FontShadowOffset 	0.001 -0.001,
+           }
+       }
+   }
+}
+
+Frame "BUTTON" "xUI_Button" {
+	Height 	0.0375,
+	Width 	0.0375,
+	ControlStyle "AUTOTRACK|HIGHLIGHTONMOUSEOVER",
+
+	ControlBackdrop "xUI_ButtonTexture",
+	Frame "BACKDROP" "xUI_ButtonTexture"	{
+		SetAllPoints,
+		BackdropBlendAll,
+		BackdropBackground 		"Textures\Transparent.tga",
+	}
+
+	ControlDisabledBackdrop "xUI_ButtonDisabled",
+	Frame "BACKDROP" "xUI_ButtonDisabled"	{
+		SetAllPoints,
+		BackdropBlendAll,
+		BackdropBackground 		"Textures\Transparent.tga",
+	}
+
+	ControlPushedBackdrop "xUI_ButtonPushed",
+	Frame "BACKDROP" "xUI_ButtonPushed"	{
+		SetAllPoints,
+		BackdropBlendAll,
+		BackdropBackground 		"Textures\Transparent.tga",
+		BackdropBackgroundInsets 	0.0005 0.0005 0.0005 0.0005,
+	}
+
+	ControlMouseOverHighlight "xUI_ButtonHighlight",
+	Frame "HIGHLIGHT" "xUI_ButtonHighlight"	{
+		SetAllPoints,
+		HighlightType 				"FILETEXTURE",
+		HighlightAlphaFile 		"UI\Glues\ScoreScreen\scorescreen-tab-hilight",
+		HighlightAlphaMode 		"ADD",
+	}
+}
+
+Frame "FRAME" "xUI_Texture" {
+	Width 	0.0375,
+	Height 	0.0375,
+
+	Frame "BACKDROP" "xUI_TextureBackground"	{
+		UseActiveContext,
+		SetAllPoints,
+		BackdropBlendAll,
+	  BackdropBackground "Textures\Transparent.tga", 
+	}
+
+	Frame "BACKDROP" "xUI_TextureTexture"	{
+		UseActiveContext,
+		SetAllPoints,
+		BackdropBlendAll,
+		BackdropBackground "ReplaceableTextures\CommandButtons\BTNSelectHeroOn.blp", 
+	}
+
+	Frame "BACKDROP" "xUI_TextureBorder"	{
+		UseActiveContext,
+		SetAllPoints,
+		BackdropBlendAll,
+		BackdropBackground "Textures\Transparent.tga", 
+	}		
+}
+
+Frame "FRAME" "xUI_Text" {
+	Width 	0.0375,
+	Height 	0.0375,
+
+	Frame "TEXT" "xUI_TextText" {
+			UseActiveContext,
+			SetAllPoints,
+			Text "SampleText",
+			FrameFont 			"Fonts\\FRIZQT__.TTF", 0.009375, "",
+			FontJustificationH 	JUSTIFYLEFT,
+			FontJustificationV 	JUSTIFYMIDDLE,
+			FontColor 		1.0 1.0 1.0 1.0,
+			FontShadowColor 	0.0 0.0 0.0 0.9,
+			FontShadowOffset 	0.001 -0.001,
+	}
+}
+
+Frame "FRAME" "xUI_Tooltip" {
+	Width 	0.15,
+	Height 	0.15,
+
+	Frame "BACKDROP" "xUI_TooltipBackground" {
+		UseActiveContext,
+		SetAllPoints,
+		BackdropBlendAll,
+	  BackdropBackground "Textures\TooltipBackground.tga", 
+		BackdropCornerFlags "UL|UR|BL|BR|T|L|B|R",
+    BackdropCornerSize  0.0075,
+    BackdropBackgroundInsets 0.000 0.000 0.000 0.000,
+    BackdropEdgeFile  "Textures\TooltipBorder.tga",
+	}
+
+	Frame "BACKDROP" "xUI_TooltipBorder"	{
+		UseActiveContext,
+		SetAllPoints,
+		BackdropBlendAll,
+		BackdropBackground "Textures\Transparent.tga", 
+	}		
+
+	Frame "TEXT" "xUI_TooltipName" {
+			Width 0.14,
+			// Height 0.0125,
+
+			UseActiveContext,
+			// SetPoint TOP, "xUI_Tooltip", TOP, 0, -0.006,
+			SetPoint TOPLEFT, "xUI_Tooltip", TOPLEFT, 0.005, -0.006,
+			SetPoint TOPRIGHT, "xUI_Tooltip", TOPRIGHT, -0.005, -0.006,
+			// Text "Copper Broadsword",
+			Text "",
+			FrameFont 			"Fonts\\FRIZQT__.TTF", 0.0103125, "",
+			FontJustificationH 	JUSTIFYLEFT,
+			FontJustificationV 	JUSTIFYMIDDLE,
+			FontColor 		1.0 1.0 1.0 1.0,
+			FontShadowColor 	0.0 0.0 0.0 0.9,
+			FontShadowOffset 	0.001 -0.001,
+	}
+
+	Frame "FRAME" "xUI_TooltipItemBlock" {
+		// Width 0.0625,
+		Height 0.01,
+
+		UseActiveContext,
+		SetPoint TOPLEFT, "xUI_TooltipName", BOTTOMLEFT, 0, -0.001,
+		SetPoint TOPRIGHT, "xUI_TooltipName", BOTTOMRIGHT, 0, -0.001,
+
+		Frame "TEXT" "xUI_TooltipItemType" {
+				Width 0.0625,
+				Height 0.008,
+
+				UseActiveContext,
+				SetPoint TOPLEFT, "xUI_TooltipItemBlock", TOPLEFT, 0, -0.002,
+				SetPoint TOPRIGHT, "xUI_TooltipItemBlock", TOP, 0, -0.002,
+				Text "",
+				FrameFont 			"Fonts\\FRIZQT__.TTF", 0.0075, "",
+				FontJustificationH 	JUSTIFYLEFT,
+				FontJustificationV 	JUSTIFYMIDDLE,
+				FontColor 		0.69 0.63 0.55 1.0,
+				FontShadowColor 	0.0 0.0 0.0 0.9,
+				FontShadowOffset 	0.001 -0.001,
+		}
+
+		Frame "TEXT" "xUI_TooltipCostValue" {
+				// Width 0.0625,
+				Height 0.008,
+
+				UseActiveContext,
+				SetPoint TOPRIGHT, "xUI_TooltipItemBlock", TOPRIGHT, -0.0095, -0.002,
+				SetPoint TOPLEFT, "xUI_TooltipItemBlock", TOP, 0, -0.002,
+				Text "",
+				FrameFont 			"Fonts\\FRIZQT__.TTF", 0.0075, "",
+				FontJustificationH 	JUSTIFYRIGHT,
+				FontJustificationV 	JUSTIFYMIDDLE,
+				FontColor 		1.0 0.8 0.0 1.0,
+				FontShadowColor 	0.0 0.0 0.0 0.9,
+				FontShadowOffset 	0.001 -0.001,
+
+				Frame "BACKDROP" "xUI_TooltipCostIcon" {
+					Width 0.0075,
+
+					UseActiveContext,
+					SetPoint TOPLEFT, "xUI_TooltipCostValue", TOPRIGHT, 0.002, -0.00025,
+					SetPoint BOTTOMLEFT, "xUI_TooltipCostValue", BOTTOMRIGHT, 0.002, 0.00025,
+					BackdropBlendAll,
+					BackdropBackground "Textures\TooltipGoldIcon.tga", 
+				}
+		}	
+	}
+
+	Frame "FRAME" "xUI_TooltipSpellBlock" {
+		// Width 0.125,
+		Height 0.016,
+
+		UseActiveContext,
+		SetPoint TOPLEFT, "xUI_TooltipItemBlock", BOTTOMLEFT, 0, -0.001,
+		SetPoint TOPRIGHT, "xUI_TooltipItemBlock", BOTTOMRIGHT, 0, -0.001,
+
+		Frame "TEXT" "xUI_TooltipManaCost" {
+				// Width 0.0625,
+				Height 0.008,
+
+				UseActiveContext,
+				SetPoint TOPLEFT, "xUI_TooltipSpellBlock", TOPLEFT, 0, -0.001,
+				SetPoint TOPRIGHT, "xUI_TooltipSpellBlock", TOP, 0, -0.001,
+				Text "145 Mana",
+				FrameFont 			"Fonts\\FRIZQT__.TTF", 0.0065625, "",
+				FontJustificationH 	JUSTIFYLEFT,
+				FontJustificationV 	JUSTIFYMIDDLE,
+				FontColor 		0.69 0.63 0.55 1.0,
+				FontShadowColor 	0.0 0.0 0.0 0.9,
+				FontShadowOffset 	0.001 -0.001,
+		}
+
+		Frame "TEXT" "xUI_TooltipRange" {
+			// Width 0.0625,
+			Height 0.008,
+
+			UseActiveContext,
+			SetPoint TOPRIGHT, "xUI_TooltipSpellBlock", TOPRIGHT, 0, -0.001,
+			SetPoint TOPLEFT, "xUI_TooltipSpellBlock", TOP, 0, -0.001,
+			Text "40 yd range",
+			FrameFont 			"Fonts\\FRIZQT__.TTF", 0.0065625, "",
+			FontJustificationH 	JUSTIFYRIGHT,
+			FontJustificationV 	JUSTIFYMIDDLE,
+			FontColor 		0.69 0.63 0.55 1.0,
+			FontShadowColor 	0.0 0.0 0.0 0.9,
+			FontShadowOffset 	0.001 -0.001,
+		}
+
+		Frame "TEXT" "xUI_TooltipCastTime" {
+				// Width 0.0625,
+				Height 0.008,
+
+				UseActiveContext,
+				SetPoint TOPLEFT, "xUI_TooltipManaCost", BOTTOMLEFT, 0, 0,
+				SetPoint TOPRIGHT, "xUI_TooltipManaCost", BOTTOMRIGHT, 0, 0,
+				Text "1.37 sec cast",
+				FrameFont 			"Fonts\\FRIZQT__.TTF", 0.0065625, "",
+				FontJustificationH 	JUSTIFYLEFT,
+				FontJustificationV 	JUSTIFYMIDDLE,
+				FontColor 		0.69 0.63 0.55 1.0,
+				FontShadowColor 	0.0 0.0 0.0 0.9,
+				FontShadowOffset 	0.001 -0.001,
+		}
+
+		Frame "TEXT" "xUI_TooltipCooldown" {
+				// Width 0.0625,
+				Height 0.008,
+
+				UseActiveContext,
+				SetPoint TOPRIGHT, "xUI_TooltipRange", BOTTOMRIGHT, 0, 0,
+				SetPoint TOPLEFT, "xUI_TooltipRange", BOTTOMLEFT, 0, 0,
+				Text "27 sec cooldown",
+				FrameFont 			"Fonts\\FRIZQT__.TTF", 0.0065625, "",
+				FontJustificationH 	JUSTIFYRIGHT,
+				FontJustificationV 	JUSTIFYMIDDLE,
+				FontColor 		0.69 0.63 0.55 1.0,
+				FontShadowColor 	0.0 0.0 0.0 0.9,
+				FontShadowOffset 	0.001 -0.001,
+		}
+	}
+
+	Frame "BACKDROP" "xUI_TooltipSeparator" {
+		// Width 0.125,
+		Height 0.00175,
+		
+		UseActiveContext,
+		SetPoint TOPLEFT, "xUI_TooltipSpellBlock", BOTTOMLEFT, 0, -0.003,
+		SetPoint TOPRIGHT, "xUI_TooltipSpellBlock", BOTTOMRIGHT, 0, -0.003,
+		BackdropBlendAll,
+	  BackdropBackground "Textures\TooltipSeparator.tga", 
+	}
+
+	Frame "TEXT" "xUI_TooltipDescription" {
+			Width 0.14,
+
+			UseActiveContext,
+			// SetPoint TOP, "xUI_TooltipSeparator", BOTTOM, 0, -0.003,
+			SetPoint TOPLEFT, "xUI_TooltipSeparator", BOTTOMLEFT, 0, -0.003,
+			SetPoint TOPRIGHT, "xUI_TooltipSeparator", BOTTOMRIGHT, 0, -0.003,
+			// Text "Description of the item that is suppose to be a bit longer, span a few rows, etc. At this point I am just writting for the sake of it. Lorem ipsum and all that kind of things.",
+			Text "",
+			FrameFont 			"Fonts\\FRIZQT__.TTF", 0.0075, "",
+			FontJustificationH 	JUSTIFYLEFT,
+			FontJustificationV 	JUSTIFYMIDDLE,
+			FontColor 		0.59 0.58 0.58 1.0,
+			FontShadowColor 	0.0 0.0 0.0 0.9,
+			FontShadowOffset 	0.001 -0.001,
+	}
+
+	Frame "TEXT" "xUI_TooltipFootnote" {
+			Width 0.14,
+
+			UseActiveContext,
+			// SetPoint TOP, "xUI_TooltipDescription", BOTTOM, 0, -0.01,
+			SetPoint TOPLEFT, "xUI_TooltipDescription", BOTTOMLEFT, 0, -0.01,
+			SetPoint TOPRIGHT, "xUI_TooltipDescription", BOTTOMRIGHT, 0, -0.01,
+			// Text "A footnote which is a lore-like kind of description whatnot, it can also span a few rows, if so needed, though I dont think it will be used much.",
+			Text "",
+			FrameFont 			"Fonts\\FRIZQT__.TTF", 0.0075, "",
+			FontJustificationH 	JUSTIFYLEFT,
+			FontJustificationV 	JUSTIFYMIDDLE,
+			FontColor 		0.39 0.29 0.17 1.0,
+			FontShadowColor 	0.0 0.0 0.0 0.9,
+			FontShadowOffset 	0.001 -0.001,
+	}
+}
