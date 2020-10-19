@@ -1,5 +1,6 @@
 import { Unit, Timer } from "w3ts";
 import { Players } from "w3ts/globals";
+import { AngleBetweenPoints } from '../libs/utils'
 
 
 const BUILD_DATE = compiletime(() => new Date().toUTCString());
@@ -12,6 +13,9 @@ export function init() {
   print(`Transpiler: v${TSTL_VERSION}`);
   print(" ");
   print("============================");
+
+  const ang = AngleBetweenPoints(0, 0, 200, 200)
+  print(ang)
 
   const unit = new Unit(Players[0], FourCC("hfoo"), -1500, -1500, 270);
   unit.name = "TypeScript";
